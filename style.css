@@ -1,5 +1,8 @@
 body {
-  background-color: #f3e0e2;
+  background: linear-gradient(45deg, #f97281, #7b589e, #171f85);
+
+  background-size: 100%;
+
   margin: 0;
   display: flex;
   align-items: center;
@@ -17,7 +20,7 @@ body {
   padding: 36px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
   border-radius: 6px;
-  background-color: #fff;
+  background-color: #ffffff;
   position: relative;
 }
 .login-box,
@@ -89,7 +92,7 @@ body {
 
 .username-holder:focus,
 .password-holder:focus {
-  border-color: #ff445e;
+  border-color: #f34841;
   background: #fff;
 }
 
@@ -97,21 +100,275 @@ body {
   width: 50%;
   padding: 16px 36px;
   margin-top: 10px;
-  margin-left: 11px;
+  margin-left: 10px;
   font-weight: bold;
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
   outline: none;
-  background-color: #ff445e;
+  background-color: #f34841;
   border: none;
   font-size: 18px;
 }
 
 .login-button:hover {
-  background-color: #e53d54; /*darker*/
+  background-color: #da403a; /*darker*/
 }
 
 .login-button:active {
+  transform: scale(0.98);
+}
+
+.container {
+  width: 60%;
+  max-width: 60%;
+
+  max-height: 400px;
+
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  background-color: #fff;
+
+  padding: 70px;
+  position: relative;
+}
+
+.search-h1,
+.add-h1 {
+  font-family: "Quicksand", sans-serif;
+
+  font-size: 36px;
+  margin: 10px;
+}
+
+.search-h1 {
+  padding-left: 25px;
+}
+.add-h1 {
+  padding-left: 50px;
+  padding-top: 10px;
+}
+
+.add-button,
+.search-button {
+  font-family: "Quicksand", sans-serif;
+}
+
+.search-button {
+  margin-bottom: 15px;
+}
+
+.search-color-holder,
+.add-color-holder {
+  display: block;
+  width: 25%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  outline: none;
+  background: #eee;
+  transition: background 0.2s, border-color 0.2s;
+  font-size: 18px;
+}
+
+.search-color-holder:focus,
+.add-color-holder:focus {
+  border-color: #f34841;
+  background: #fff;
+}
+
+.search-button,
+.add-button {
+  width: 20%;
+  padding: 16px 36px;
+  margin-top: 15px;
+  margin-left: 30px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  background-color: #f34841;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+}
+.add-button {
+  margin-bottom: 25px;
+}
+
+.search-button:hover,
+.add-button:hover {
+  background-color: #da403a; /*darker*/
+}
+
+.search-button:active {
+  transform: scale(0.98);
+}
+
+.add-butto:active {
+  transform: scale(0.98);
+}
+
+.search-color-holder,
+.add-color-holder,
+.search-button {
+  font-family: "Quicksand", sans-serif;
+}
+
+.sign-up {
+  font-size: 16px;
+  font-family: "Quicksand", sans-serif;
+  text-decoration: underline;
+  color: black;
+  cursor: pointer;
+  padding: 10px;
+  display: inline-block;
+  margin-right: 30px;
+  margin-top: 15px;
+  text-align: center;
+}
+.sign-up:hover {
+  color: #f34841;
+}
+
+.sign-up:active {
+  transform: scale(0.98);
+}
+
+.logout {
+  font-size: 24px;
+  font-family: "Quicksand", sans-serif;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+}
+
+.logout:hover {
+  color: #f34841;
+}
+
+.logout:active {
+  transform: scale(0.98);
+}
+/* .img-gif {
+  position: absolute;
+
+  width: 450px;
+  max-width: 450px;
+  padding: 15px;
+  left: 400px;
+  top: 30px;
+} */
+
+.vertical {
+  border-left: 2px solid #444;
+  height: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1px;
+}
+/* .select-bar {
+  width: 100%;
+  max-width: 60%;
+}
+.search {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  color: black;
+  width: 100%;
+  max-width: 100%;
+} */
+
+/* SIGN UP STYLE */
+
+.sign-up-container {
+  width: 600px;
+  max-width: 600px;
+  height: 400px;
+  max-height: 400px;
+  margin: 18px;
+  padding: 36px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  background-color: #ffffff;
+  position: relative;
+  display: block;
+}
+.create-h1 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 40px;
+  margin: 10px;
+  margin-bottom: 24px;
+  text-align: center;
+  display: block;
+}
+.user-signUp-holder,
+.password-signUp-holder,
+.email-signUp-holder {
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  background: #eee;
+  transition: background 0.2s, border-color 0.2s;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.user-signUp-holder:focus,
+.password-signUp-holder:focus,
+.email-signUp-holder:focus {
+  border-color: #f34841;
+  background: #fff;
+}
+.terms-text {
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  margin-right: 3px;
+}
+
+.create-button {
+  width: 50%;
+  padding: 14px 24px;
+  margin-top: 35px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  background-color: #f34841;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+}
+
+.create-button:hover {
+  background-color: #da403a;
+}
+
+.create-button:active {
+  transform: scale(0.98);
+}
+.terms-link {
+  color: black;
+}
+
+.terms-link:hover {
+  color: #f34841;
+}
+
+.terms-link:active {
   transform: scale(0.98);
 }

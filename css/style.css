@@ -312,10 +312,30 @@ body {
   text-align: center;
   display: block;
 }
-.user-signUp-holder,
+.firstName-signUp-holder, 
+.lastName-signUp-holder {
+  width: 23%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  background: #eee;
+  transition: background 0.2s, border-color 0.2s;
+  font-size: 18px;
+  margin-bottom: 20px; 
+  margin-left: .5vw;
+  margin-right: .5vw;
+}
+
+.firstlastName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .password-signUp-holder,
-.email-signUp-holder {
-  width: 50%;
+.userName-signUp-holder {
+  width: 52%;
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #ddd;
@@ -326,9 +346,10 @@ body {
   margin-bottom: 20px;
 }
 
-.user-signUp-holder:focus,
+.userName-signUp-holder:focus,
 .password-signUp-holder:focus,
-.email-signUp-holder:focus {
+.firstName-signUp-holder:focus,
+.lastName-signUp-holder:focus {
   border-color: #f34841;
   background: #fff;
 }

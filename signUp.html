@@ -2,7 +2,9 @@
 <html>
   <head>
     <title>Sign Up LAMP Stack</title>
-    <link href="style.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/signUp.js"></script>
+    <script type="text/javascript" src="js/md5.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,27 +17,37 @@
     <div class="sign-up-container">
       <h1 class="create-h1">Create New Account</h1>
 
-      <div style="text-align: center">
+      <div class="firstlastName" style="text-align: center">
         <input
           type="text"
-          class="user-signUp-holder"
+          id="first"
+          class="firstName-signUp-holder"
           autofocus
-          placeholder="Name"
+          placeholder="First Name"
+        />
+        <input
+          type="text"
+          id="last"
+          class="lastName-signUp-holder"
+          autofocus
+          placeholder="Last Name"
         />
       </div>
 
       <div style="text-align: center">
         <input
           type="text"
-          class="email-signUp-holder"
+          id="user"
+          class="userName-signUp-holder"
           autofocus
-          placeholder="Email"
+          placeholder="User Name"
         />
       </div>
 
       <div style="text-align: center">
         <input
           type="password"
+          id="pass"
           class="password-signUp-holder"
           autofocus
           placeholder="Password"

@@ -20,6 +20,7 @@ function doLogin()
     if( login == "" || password == "")
     {
         document.getElementById("emptyResult").innerHTML = "All fields are required";
+        document.getElementById("loginResult").style.display = none;
         return;
     }
     
@@ -46,6 +47,7 @@ function doLogin()
                 if(userId < 1)
                 {
                     document.getElementById("loginResult").innerHTML = "The user/password combination is incorrect";
+                    document.getElementById("emptyResult").style.display = none;
                     return;
                 }
                 window.location.href = "signUp.html";
@@ -56,5 +58,6 @@ function doLogin()
     catch(err)
 	{
 		document.getElementById("loginResult").innerHTML = err.message;
+        document.getElementById("emptyResult").style.display = none;
 	}
 }

@@ -16,7 +16,9 @@
   <body>
     <div class="sign-up-container">
       <h1 class="create-h1">Create New Account</h1>
-
+      <div id="createdAccount">
+        <p id="accountCreated"></p> 
+      </div>
       <div class="firstlastName" style="text-align: center">
         <input
           type="text"
@@ -53,6 +55,22 @@
           placeholder="Password"
         />
       </div>
+
+      <div style="text-align: center">
+        <input
+          type="password"
+          id="pass2"
+          class="password1-signUp-holder"
+          autofocus
+          placeholder="Confirm Password"
+        />
+      </div>
+
+      <div id="message2">
+        <p id="isEmpty"></p>
+        <p id="notValid"></p>  
+      </div>
+      
       <div style="text-align: center">
         <input class="terms" type="checkbox" style="cursor: pointer" />
         <label class="terms-text" for="terms"
@@ -60,8 +78,9 @@
           <a class="terms-link" href="terms.html">Terms & Conditions</a></label
         >
       </div>
+
       <div style="text-align: center">
-        <button class="create-button" type="submit">Create Account</button>
+        <button class="create-button" type="submit" onclick="isValid();">Create Account</button>
       </div>
     </div>
   </body>

@@ -325,6 +325,7 @@ body {
   margin-bottom: 20px; 
   margin-left: .5vw;
   margin-right: .5vw;
+  margin-top: 1vh;
 }
 
 .firstlastName {
@@ -334,7 +335,8 @@ body {
 }
 
 .password-signUp-holder,
-.userName-signUp-holder {
+.userName-signUp-holder,
+.password1-signUp-holder {
   width: 52%;
   padding: 10px;
   border-radius: 10px;
@@ -349,7 +351,8 @@ body {
 .userName-signUp-holder:focus,
 .password-signUp-holder:focus,
 .firstName-signUp-holder:focus,
-.lastName-signUp-holder:focus {
+.lastName-signUp-holder:focus,
+.password1-signUp-holder:focus{
   border-color: #f34841;
   background: #fff;
 }
@@ -362,7 +365,7 @@ body {
 .create-button {
   width: 50%;
   padding: 14px 24px;
-  margin-top: 35px;
+  margin-top: 9px;
   font-weight: bold;
   color: #fff;
   border-radius: 10px;
@@ -395,21 +398,53 @@ body {
 }
 
 #emptyResult {
-  color: darkred;
+  color: rgb(199, 5, 5);
   font-weight: bold;
   font-size: 1.5vh;
   margin-left: 15%;
 }
 
 #loginResult {
-  color: darkred;
+  color: rgb(199, 5, 5);
   font-weight: bold;
   font-size: 1.5vh;
   margin-left: 5%;
 }
 
-#message {
-  margin-top: -3.7vh;
-  margin-bottom: 1vh;
+#createdAccount {
+  margin-top: -3vh;
   height: 2vh;
+  margin-left: 12%;
+}
+
+#accountCreated {
+  color: rgb(6, 160, 14);
+  font-weight: bolder;
+  font-size: 3vh;
+  margin-left: 5%;
+}
+
+#message{
+  margin-top: -3.7vh;
+  height: 2vh;
+}
+
+#message2 {
+  margin-top: -3vh;
+  margin-bottom: -2VH;
+}
+
+
+#isEmpty {
+  color: rgb(199, 5, 5);
+  font-weight: bold;
+  font-size: 1.5vh;
+  margin-left: 40%;
+}
+
+#notValid {
+  color: rgb(199, 5, 5);
+  font-weight: bold;
+  font-size: 1.5vh;
+  margin-left: 38%;
 }

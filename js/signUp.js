@@ -10,6 +10,7 @@ function addUser()
     var userPass = document.getElementById("pass").value;
 
     document.getElementById("isEmpty").innerHTML = "";
+    document.getElementById("notValid").innerHTML = "";
     document.getElementById("accountCreated").innerHTML = "";
 
     var tmp = {firstName:firstName, lastName:lastName, login:userName, password:userPass};
@@ -59,13 +60,13 @@ function isValid()
 
     if( fName == "" || lName == "" || uName == "" || pass1 == "" || pass2 == "")
     {
-        document.getElementById("isEmpty").innerHTML = "All fields are required";
+        document.getElementById("isEmpty").innerHTML = "*All fields are required";
         return;
     }
 
     if(hash1 != hash2)
     {
-        document.getElementById("notValid").innerHTML = "Passwords do not match";
+        document.getElementById("notValid").innerHTML = "*Passwords do not match";
         return;
     }
     addUser();    

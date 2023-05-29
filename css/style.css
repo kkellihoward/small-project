@@ -81,7 +81,6 @@ body {
   display: block;
   width: 50%;
   padding: 10px;
-
   border-radius: 4px;
   border: 1px solid #ddd;
   outline: none;
@@ -100,6 +99,7 @@ body {
   width: 50%;
   padding: 16px 36px;
   margin-left: 10px;
+  margin-top: 15px;
   font-weight: bold;
   color: #fff;
   border-radius: 4px;
@@ -294,8 +294,7 @@ body {
 .sign-up-container {
   width: 600px;
   max-width: 600px;
-  height: 400px;
-  max-height: 400px;
+  height: 450px;
   margin: 18px;
   padding: 36px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
@@ -303,6 +302,13 @@ body {
   background-color: #ffffff;
   position: relative;
   display: block;
+}
+
+@media screen and (max-width: 511px){
+  .sign-up-container {
+    height: 500px;
+  }
+
 }
 .create-h1 {
   font-family: "Quicksand", sans-serif;
@@ -316,7 +322,7 @@ body {
 .lastName-signUp-holder {
   width: 23%;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 4px;
   border: 1px solid #ddd;
   outline: none;
   background: #eee;
@@ -339,7 +345,7 @@ body {
 .password1-signUp-holder {
   width: 52%;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 4px;
   border: 1px solid #ddd;
   outline: none;
   background: #eee;
@@ -365,10 +371,10 @@ body {
 .create-button {
   width: 50%;
   padding: 14px 24px;
-  margin-top: 9px;
+  margin-top: 10px;
   font-weight: bold;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 4px;
   cursor: pointer;
   outline: none;
   background-color: #f34841;
@@ -378,6 +384,10 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
+.termStyle{
+  margin-top: 2px;
+  font-size: xx-small;
+}
 .create-button:hover {
   background-color: #da403a;
 }
@@ -399,16 +409,18 @@ body {
 
 #emptyResult {
   color: rgb(199, 5, 5);
-  font-weight: bold;
-  font-size: 1.5vh;
-  margin-left: 15%;
+  font-weight: lighter;
+  font-size: 17px;
+  margin-left: 13%;
+  font-family: "Quicksand", sans-serif;
 }
 
 #loginResult {
   color: rgb(199, 5, 5);
-  font-weight: bold;
-  font-size: 1.5vh;
-  margin-left: 5%;
+  font-weight: lighter;
+  font-size: 17px;
+  margin-left: .2%;
+  font-family: "Quicksand", sans-serif;
 }
 
 #createdAccount {
@@ -419,32 +431,37 @@ body {
 
 #accountCreated {
   color: rgb(6, 160, 14);
-  font-weight: bolder;
-  font-size: 3vh;
+  font-weight: lighter;
+  font-size: 2vh;
   margin-left: 5%;
+  font-family: "Quicksand", sans-serif;
 }
 
 #message{
   margin-top: -3.7vh;
   height: 2vh;
+  
 }
 
 #message2 {
-  margin-top: -3vh;
-  margin-bottom: -2VH;
+  margin-top: -4vh;
+  margin-bottom: 1vh;
+  height: 1.5vh;
 }
 
 
 #isEmpty {
   color: rgb(199, 5, 5);
-  font-weight: bold;
-  font-size: 1.5vh;
-  margin-left: 40%;
+  font-weight: lighter;
+  font-size: 17px;
+  margin-left: 35%;
+  font-family: "Quicksand", sans-serif;
 }
 
 #notValid {
   color: rgb(199, 5, 5);
-  font-weight: bold;
-  font-size: 1.5vh;
-  margin-left: 38%;
+  font-weight: lighter;
+  font-size: 17px;
+  margin-left: 33%;
+  font-family: "Quicksand", sans-serif;
 }

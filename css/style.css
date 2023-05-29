@@ -99,7 +99,6 @@ body {
 .login-button {
   width: 50%;
   padding: 16px 36px;
-  margin-top: 30px;
   margin-left: 10px;
   font-weight: bold;
   color: #fff;
@@ -225,6 +224,7 @@ body {
   padding: 10px;
   display: inline-block;
   margin-right: 30px;
+  margin-left: 10%;
   margin-top: 15px;
   text-align: center;
 }
@@ -373,9 +373,22 @@ body {
   transform: scale(0.98);
 }
 
-#emptyResult , #loginResult {
+#emptyResult {
   color: darkred;
   font-weight: bold;
-  font-size: smaller;
+  font-size: 1.5vh;
+  margin-left: 15%;
+}
+
+#loginResult {
+  color: darkred;
+  font-weight: bold;
+  font-size: 1.5vh;
+  margin-left: 5%;
+}
+
+#message {
   margin-top: -3.7vh;
+  margin-bottom: 1vh;
+  height: 2vh;
 }

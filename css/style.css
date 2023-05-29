@@ -372,3 +372,8 @@ body {
 .terms-link:active {
   transform: scale(0.98);
 }
+
+#emptyLogin , #loginResult {
+  color: darkred;
+  font-weight: bold;
+}

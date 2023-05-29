@@ -15,10 +15,11 @@ function doLogin()
     var password = document.getElementById("loginPassword").value;
 
     document.getElementById("loginResult").innerHTML = "";
+    document.getElementById("emptyResult").innerHTML = "";
     
     if( login == "" || password == "")
     {
-        alert("Please fill out empty fields");
+        document.getElementById("emptyResult").innerHTML = "All fields are required";
         return;
     }
     

@@ -58,6 +58,6 @@ function doLogin()
     catch(err)
 	{
 		document.getElementById("loginResult").innerHTML = err.message;
-        document.getElementById("emptyResult").style.display = none;
+        	document.getElementById("emptyResult").style.display = none;
 	}
 }

@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>COP 4331 LAMP Stack</title>
-    <link href="style.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,700&family=Quicksand:wght@500&display=swap" rel="stylesheet">
-
+    <title>Login LAMP Stack</title>
+    <script type="text/javascript" src="js/login.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,700&family=Quicksand:wght@500&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-
     <div class="login-box">
-      <form class="login" >
+      <!-- <form class="login"> -->
+      <h1 class="login-h1">Please Login</h1>
+      <h1 class="inro-h1">COP 4331 <br />LAMP <br />Stack</h1>
+      <div class="user">
+        <input
+          type="text"
+          id="loginName"
+          class="username-holder"
+          autofocus
+          placeholder="Username"
+        />
+      </div>
+      <div class="pass">
+        <input
+          type="password"
+          id="loginPassword"
+          class="password-holder"
+          autofocus
+          placeholder="Password"
+        />
+      </div>
 
-        <h1 class="login-h1"> Please Login </h1>
-        <h1 class="inro-h1"> COP 4331 <br>LAMP <br>Stack </h1>
-        <div class="user">
-        <input type="text" class="username-holder" autofocus placeholder="Username">
-        </div>
-        <div class="pass">
-
-        <input type="password" class="password-holder" autofocus placeholder="Password">
-        </div>
-
-        <button type="submit" class="login-button">Login</button>
-        
+      <button type="submit" class="login-button" onclick="doLogin()">Login</button>
+      <span id="loginResult"></span>
+      
+      <div>
+        <a class="sign-up" href="signUp.html"> Dont't have an account?</a>
+      </div>
+      <!-- </form> -->
     </div>
-
   </body>
 </html>

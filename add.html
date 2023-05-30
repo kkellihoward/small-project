@@ -5,6 +5,7 @@
     <link href="style.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="css/style.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,700&family=Quicksand:wght@500&display=swap"
       rel="stylesheet"
@@ -14,17 +15,24 @@
   <body>
     <div class="hidden-container">
       <div style="text-align: center">
-        <p>Name</p>
+        <div><h1 class="hidden-h1">Add a Contact</h1></div>
+        <!-- <p>Name</p> -->
         <input
           type="text"
-          class="name-hidden-holder"
+          class="firstName-hidden-holder"
           autofocus
-          placeholder="name"
+          placeholder="First Name"
+        />
+        <input
+          type="text"
+          class="lastName-hidden-holder"
+          autofocus
+          placeholder="Last Name"
         />
       </div>
 
       <div style="text-align: center">
-        <p>Email</p>
+        <!-- <p>Email</p> -->
         <input
           type="email"
           class="email-hidden-holder"
@@ -33,7 +41,7 @@
         />
       </div>
       <div style="text-align: center">
-        <p>Phone</p>
+        <!-- <p>Phone</p> -->
 
         <input
           type="text"

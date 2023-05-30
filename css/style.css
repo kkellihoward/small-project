@@ -502,10 +502,11 @@ body {
   background-color: #ffffff;
   position: relative;
 }
-.name-hidden-holder,
+
 .email-hidden-holder,
 .phone-hidden-holder {
   width: 40%;
+  display: inline;
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #ddd;
@@ -513,21 +514,38 @@ body {
   background: #eee;
   transition: background 0.2s, border-color 0.2s;
   font-size: 18px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+}
+.firstName-hidden-holder {
+  margin-right: 10px;
 }
 
-.name-hidden-holder:focus,
+.lastName-hidden-holder,
+.firstName-hidden-holder {
+  width: 25%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  outline: none;
+  background: #eee;
+  transition: background 0.2s, border-color 0.2s;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.lastName-hidden-holder:focus,
+.firstName-hidden-holder:focus,
 .email-hidden-holder:focus,
 .phone-hidden-holder:focus {
   border-color: #f34841;
   background: #fff;
 }
-.hidden-container p {
-  margin-bottom: 10px;
+.hidden-h1 {
+  margin-bottom: 25px;
   font-family: "Quicksand", sans-serif;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .add-other-button {

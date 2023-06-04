@@ -99,8 +99,6 @@ function searchContact()
                         currentContact.email, 
                         currentContact.phone))
 				}
-				
-				document.getElementsByTagName("p")[0].innerHTML = colorList;
 			}
 		};
 		xhr.send(jsonPayload);

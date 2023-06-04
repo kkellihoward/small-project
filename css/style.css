@@ -120,6 +120,7 @@ body {
 .container {
   width: 600px;
   max-width: 600px;
+  height: 70vh;
 
   /* max-height: 400px; */
 
@@ -142,6 +143,7 @@ body {
   font-size: 30px;
 
   margin: 10px;
+  margin-left: -20px;
   text-transform: uppercase;
   font-weight: bold;
   position: relative;
@@ -150,7 +152,6 @@ body {
 .search-h1,
 .add-h1 {
   font-family: "Quicksand", sans-serif;
-
   font-size: 30px;
   margin: 10px 0;
 }
@@ -162,11 +163,10 @@ body {
 .add-button,
 .search-button {
   font-family: "Quicksand", sans-serif;
-  margin-top: 25px;
-}
+  height: 2.7rem;
+  margin-left: 3vw;
+  padding-top: -1rem;
 
-.search-button {
-  margin-bottom: 15px;
 }
 
 .search-in-holder,
@@ -255,7 +255,9 @@ body {
   cursor: pointer;
   padding: 10px;
   position: absolute;
-  right: 10px;
+  right: 2vw;
+  margin-right: 5vw;
+  bottom: 0;
 }
 
 .logout:hover {
@@ -502,10 +504,11 @@ body {
   background-color: #ffffff;
   position: relative;
 }
-.name-hidden-holder,
+
 .email-hidden-holder,
 .phone-hidden-holder {
   width: 40%;
+  display: inline;
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #ddd;
@@ -513,21 +516,38 @@ body {
   background: #eee;
   transition: background 0.2s, border-color 0.2s;
   font-size: 18px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+}
+.firstName-hidden-holder {
+  margin-right: 10px;
 }
 
-.name-hidden-holder:focus,
+.lastName-hidden-holder,
+.firstName-hidden-holder {
+  width: 25%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  outline: none;
+  background: #eee;
+  transition: background 0.2s, border-color 0.2s;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.lastName-hidden-holder:focus,
+.firstName-hidden-holder:focus,
 .email-hidden-holder:focus,
 .phone-hidden-holder:focus {
   border-color: #f34841;
   background: #fff;
 }
-.hidden-container p {
-  margin-bottom: 10px;
+.hidden-h1 {
+  margin-bottom: 25px;
   font-family: "Quicksand", sans-serif;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .add-other-button {
@@ -552,33 +572,226 @@ body {
   transform: scale(0.98);
 }
 
-.search-result-container {
-  width: 450px;
-  max-width: 450px;
-  margin: 150px auto;
-}
-
-.search-result-container .search-input {
-  background-color: #fff;
-  width: 100%;
-  border-radius: 5px;
-  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
-}
-
-.search-input input {
-  height: 55px;
-  width: 100%;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  padding: 0 60px 0 20px;
-  font-size: 18px;
-}
-
 .db-img {
   width: 50px;
   max-width: 50px;
   position: absolute;
   top: 20px;
   margin-left: 10px;
+}
+
+.search-result-container {
+  width: 100%;
+  max-width: 100%;
+
+  height: 80%;
+
+  margin: 18px;
+  padding: 36px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  background-color: #ffffff;
+  position: relative;
+}
+.Results-h1 {
+  font-family: "Quicksand", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+.output-table {
+  border-radius: 4px;
+}
+
+
+.table-results {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  /* margin: 25px 0; */
+  font-size: 0.9em;
+  font-family: "Quicksand", sans-serif;
+  /* min-width: 400px; */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.table-results thead {
+  border-radius: 4px;
+}
+
+.table-results thead th {
+  font-family: "Quicksand", sans-serif;
+  background-color: #f34841;
+  color: #ffffff;
+  text-align: left;
+  padding: 20px 23px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.table-results thead th:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.table-results thead th:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.table-results td,
+.table-results tr {
+  font-family: "Quicksand", sans-serif;
+  padding: 20px 23px;
+}
+.table-results tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.table-results tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.table-results tbody tr a {
+  text-decoration: none;
+  color: black;
+}
+
+.table-results tbody tr a:hover {
+  text-decoration: none;
+  color: #f34841;
+}
+
+.table-results tbody tr a:active {
+  transform: scale(0.98);
+}
+.delete-link {
+  text-decoration: underline !important;
+  color: #605e5e !important;
+}
+
+.delete-link:hover {
+  text-decoration: underline !important;
+  color: #f34841 !important;
+}
+
+.back-to-manager {
+  font-size: 26px;
+  font-family: "Quicksand", sans-serif;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  margin-left: 30px;
+  position: absolute;
+  left: 5px;
+  bottom: 10px;
+}
+
+.back-to-manager:hover {
+  color: #f34841;
+}
+
+.back-to-manager:active {
+  transform: scale(0.98);
+}
+
+.addContactDisplay {
+  display: none;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.addInput {
+  width: 30vw;
+  display: inline;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  outline: none;
+  background: #eee;
+  transition: background 0.2s, border-color 0.2s;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.addInput:focus {
+  border-color: #f34841;
+  background: #fff;
+}
+
+#addSearchDisplay {
+  display: contents;
+}
+
+.searchContactDisplayLeft {
+  display: flex;
+  flex-direction: column;
+  width: 10vw;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.searchInput {
+  width: 15vw;
+  /* display: inline; */
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  outline: none;
+  background: #eee;
+  transition: background 0.2s, border-color 0.2s;
+  font-size: 18px;
+  height: 1.25rem;
+  /* margin-bottom: 20px; */
+}
+
+.searchInput:focus {
+  border-color: #f34841;
+  background: #fff;
+}
+
+#searchIcon {
+  /* margin-right: 3vw; */
+  padding-top: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.searchButton {
+  padding: 0.5rem 0rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  background-color: #f34841;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  /* margin-left: 3.5vw; */
+  margin-top: 1.4rem;
+  width: 8rem;
+  margin-left: 19%;
+}
+
+.searchResults {
+  margin-left: 35%;
+  overflow-y: scroll;
+  max-height: 50vh;
+  width: 140%
+}
+
+.searchResults::-webkit-scrollbar {
+  display: none;
+}
+
+.contactContainer {
+  margin-top: 25%;
+  display: none;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
 }

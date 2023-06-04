@@ -55,14 +55,14 @@ function doLogin()
 
 				saveCookie();
 
-                window.location.href = "signUp.html";
+                window.location.href = "manager.html";
             }
         }
         xhr.send(jsonPayload);
     }
     catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		document.getElementById("loginResult").innerHTML = err.id;
 	}
 }
 

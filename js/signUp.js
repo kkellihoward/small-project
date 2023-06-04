@@ -40,7 +40,7 @@ function addUser()
     }
     catch(err)
 	{
-		document.getElementById("isEmpty").innerHTML = err.message;
+		document.getElementById("isEmpty").innerHTML = err.error;
 	}
 }
 

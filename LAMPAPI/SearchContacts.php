@@ -1,6 +1,11 @@
 <?php
 
 	$inData = getRequestInfo();
+    $firstName = "%" . $inData["firstName"] . "%";
+    $lastName = "%" . $inData["lastName"] . "%";
+    $email = "%" . $inData["email"] . "%";
+    $phone = "%" . $inData["phone"] . "%";
+    $userId = $inData["userId"];	
 	
 	$searchResults = "";
 	$searchCount = 0;
@@ -12,10 +17,10 @@
 	} 
 	else
 	{
-		$stmt = $conn->prepare("SELECT * FROM Contacts WHERE UserID=?  AND
-							   (firstName LIKE ? OR lastName LIKE ? OR phone LIKE ? OR email LIKE ?)");
+		$stmt = $conn->prepare("SELECT * FROM Contacts WHERE UserID=? AND firstName LIKE ?
+							    	AND lastName LIKE ? AND phone LIKE ? AND email LIKE ?");
 		$search = "%" . $inData["search"] . "%";
-		$stmt->bind_param("sssss", $inData["userId"], $search, $search, $search, $search);
+		$stmt->bind_param("sssss", $userId, $firstName, $lastName, $phone, $email);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();

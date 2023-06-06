@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>LAMP Stack</title>
+    <script type="text/javascript" src="js/search.js"></script>
+    <script type="text/javascript" src="js/add.js"></script>
+    <script type="text/javascript" src="js/addSearchSwitch.js"></script>
     <link href="css/style.css" rel="stylesheet" /> 
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -10,8 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,700&family=Quicksand:wght@500&display=swap"
       rel="stylesheet"
     />
-    <script type="text/javascript" src="js/add.js"></script>
-  
+    <!-- <script type="text/javascript" src="js/add.js"></script>   -->
   </head>
 
   <body>
@@ -20,9 +22,14 @@
         <div class="welcom" style="text-align: center">
           <h1 class="welcom-h1" style="text-align: center">Welcome to Contact Manager <img class="db-img" src="data-management.png"></h1>
         </div>
+
+        <div style="display: flex; flex-direction: row; margin-top: -1.5rem; margin-bottom: 1.5rem;">
+          <button class="addDisplayButton" id="addDisplayButton" onclick="addDisplay()">Add</button>
+          <button class="searchDisplayButton" id="searchDisplayButton" onclick="searchDisplay()">Search</button>
+        </div>
         
         <!-- Add Contact -->
-        <div class="addContactDisplay">
+        <div class="addContactDisplay" id="addContactDisplay">
           <form style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <div>
               <h1 class="add-h1">Add contact<i class='bi bi-plus'></i></h1>
@@ -61,16 +68,23 @@
               class="addInput"
               id="phone"
               autofocus
-              placeholder="+1 (xxx) xxx-xxxx"
+              placeholder="xxx-xxx-xxxx"
             />
-
-            <button type="button" class="add-button" onclick="verifyAdd()">Add</i></button>
+            <div id="message3">
+              <p id="contactAddResult"></p>
+              <p id="duplicateContact"></p>
+              <p id="invalidFormat1"></p>
+              <p id="oneField"></p>
+            </div>
+            <div>
+              <button type="button" class="add-button" onclick="checkFormat();">Add</i></button>
+            </div>
           </form>
         </div>
         
         <!-- Search Contact -->
-        <div style="display: flex; flex-direction: row;">
-          <div class="searchContactDisplayLeft">
+        <div class="searchContactDisplay" id="searchResults">
+          <div class="searchContactDisplayLeft" id="searchContactDisplayLeft">
             <form class="searchContactDisplayLeft" style="width: 17vw">          
               <input
                 type="text"
@@ -80,7 +94,7 @@
                 placeholder="First Name"
               />
 
-              <p style="float: left">AND/OR</p>
+              <p style="font-family: Quicksand, sans-serif; font-size: smaller; margin: 1.19rem">AND/OR</p>
               
               <input
               type="text"
@@ -90,7 +104,7 @@
               placeholder="Last Name"
               />
               
-              <p>AND/OR</p>
+              <p style="font-family: Quicksand, sans-serif; font-size: smaller; margin: 1.19rem">AND/OR</p>
               
               <input
               type="text"
@@ -100,7 +114,7 @@
               placeholder="Email"
               />
               
-              <p>AND/OR</p>
+              <p style="font-family: Quicksand, sans-serif; font-size: smaller; margin: 1.19rem">AND/OR</p>
               
               <input
                 type="text"
@@ -109,88 +123,56 @@
                 autofocus
                 placeholder="Phone"
               />
-              
-              <button type="submit" class="searchButton">Search <i class='bi bi-search' id="searchIcon"></i></button>
+              <p id="contactUpdateResult"></p>
+              <p id="contactSearchResult"></p>
+              <p id="contactDeleted"></p>
+              <button type="button" class="searchButton" onclick="searchContact()">Search <i class='bi bi-search' id="searchIcon"></i></button>
             </form>
           </div>
 
           <div class="searchResults" style="border-radius: 10px;">
             <div class="output-table" style="border-radius: 4px;">
-              <table class="table-results" id="searchBody">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                  </tr>
-                </thead>
-    
-                <tbody>
-                  <tr>
-                    <td><a href="#">Abdullah</a></td>         
-                  </tr>
-                  <tr>
-                    <td><a href="#">Firtname goes here</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="#">Firtname goes here</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="#">Firtname goes here</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="#">Firtname goes here</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="#">Firtname goes here</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="#">Firtname goes here</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="#">Firtname goes here</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="#">Firtname goes here</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="#">Firtname goes here</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="#">Firtname goes here</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="#">Firtname goes here</a></td>
-                  </tr>
-                </tbody></table>
+              <div class="resultTitle">
+                <h3 style="color: white">Results</h3>
+              </div>
+              <div style="overflow-y: scroll; max-height: 78.5%;">
+                <table class="table-results" id="searchBody">
+                </table>
+              </div>
     
             </div>
           </div>
         </div>
 
-        <a class="logout" href="login.html"> Log Out  <i class='bi bi-box-arrow-right'></i></a>
+        <a class="logout" href="index.html"> Log Out  <i class='bi bi-box-arrow-right'></i></a>
       </div>
 
       <div class="contactContainer" id="contactContainer">
-        <div style="display: flex; flex-direction: row;">
-          <p>First Name: </p>
+        <div style="display: flex; flex-direction: row; margin-right: 6.1rem;">
+          <p style="margin-right: 1rem; margin-left: -1rem;">First Name: </p>
           <input class="searchInput" id="contactFirst" />
         </div>
-        <div style="display: flex; flex-direction: row;">
-          <p>Last Name: </p>
-          <input class="searchInput" id="contactFirst" />
+        <div style="display: flex; flex-direction: row; margin-right: 6.1rem;">
+          <p style="margin-right: 1rem; margin-left: -1rem;">Last Name: </p>
+          <input class="searchInput" id="contactLast" />
+        </div>
+        <div style="display: flex; flex-direction: row; margin-right: 4rem;">
+          <p style="margin-right: 1rem; margin-left: -1rem;">Phone: </p>
+          <input class="searchInput" id="contactPhone" />
+        </div>
+        <div style="display: flex; flex-direction: row; margin-right: 4rem;">
+          <p style="margin-right: 1rem; margin-left: -1rem;">Email: </p>
+          <input class="searchInput" id="contactEmail" />
+          <p id="contactId"></p>
         </div>
         <div style="display: flex; flex-direction: row;">
-          <p>Phone: </p>
-          <input class="searchInput" id="contactFirst" />
-        </div>
-        <div style="display: flex; flex-direction: row;">
-          <p>Email: </p>
-          <input class="searchInput" id="contactFirst" />
-        </div>
-        <div style="display: flex; flex-direction: row;">
-          <button>Edit</button>
-          <button>Delete</button>
+          <button class="contactEdit" onclick="edit()">Edit Contact</button>
+          <button class="contactEdit" onclick="update()">Update Contact</button>
+          <button class="contactDelete" onclick="deleteContact()">Delete Contact</button>
+          <button class="contactGoBack" onclick="backToSearch()">Cancel</button>
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="js/addSearchSwitch.js"></script>  
   </body>
 </html>

@@ -13,7 +13,7 @@ function doLogin()
 
     var login = document.getElementById("loginName").value;
     var password = document.getElementById("loginPassword").value;
-    var hash = md5( password );
+    //var hash = md5( password );
 
     document.getElementById("loginResult").innerHTML = "";
     document.getElementById("emptyResult").innerHTML = "";
@@ -21,12 +21,13 @@ function doLogin()
     if( login == "" || password == "")
     {
         document.getElementById("emptyResult").innerHTML = "*All fields are required";
-        document.getElementById("loginResult").style.display = none;
+        //document.getElementById("loginResult").style.display = none;
         return;
     }
     
-    var tmp = {login:login,password:hash};
+    var tmp = {login:login,password:password};
     let jsonPayload = JSON.stringify(tmp);
+    console.log(jsonPayload);
 
     var url = urlBase + '/Login.' + extension;
 
@@ -42,11 +43,11 @@ function doLogin()
                 var jsonObject = JSON.parse(xhr.responseText);
                 console.log(xhr.responseText);
                 userId = jsonObject.id;
-                
+                console.log(userId);
                 if(userId < 1)
                 {
                     document.getElementById("loginResult").innerHTML = "*The user/password combination is incorrect";
-                    document.getElementById("emptyResult").style.display = none;
+                    //document.getElementById("emptyResult").style.display = none;
                     return;
                 }
 
@@ -62,7 +63,7 @@ function doLogin()
     }
     catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.id;
+		document.getElementById("loginResult").innerHTML = err.error;
 	}
 }
 

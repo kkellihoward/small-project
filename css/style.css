@@ -30,42 +30,6 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-/* .login-h1 {
-  text-align: center;
-  margin-bottom: 36px;
-}
-
-.inro-h1 {
-  position: absolute;
-  right: 50px;
-  bottom: 130px;
-  text-align: center;
-  text-transform: uppercase;
-  background-image: linear-gradient(
-    -225deg,
-    #231557 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
-  );
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 2s linear infinite;
-  display: inline-block;
-}
-
-@keyframes textclip {
-  to {
-    background-position: 200% center;
-  }
-} */
-
 .username-holder {
   margin-top: 10px;
   margin-bottom: 25px;
@@ -689,17 +653,18 @@ body {
   background-color: #f3f3f3;
 }
 
-.table-results tbody tr a {
-  text-decoration: none;
+.table-results tbody tr{
+  text-decoration: underline;
   color: black;
 }
 
-.table-results tbody tr a:hover {
-  text-decoration: none;
+.table-results tbody tr:hover {
+  text-decoration: underline;
   color: #f34841;
+  cursor: pointer;
 }
 
-.table-results tbody tr a:active {
+.table-results tbody tr:active {
   transform: scale(0.98);
 }
 .delete-link {
@@ -831,14 +796,9 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-.searchResults::-webkit-scrollbar {
-  /* display: none; */
-}
-
 .contactContainer {
   margin-top: 25%;
   display: none; 
-  flex-direction: row;
   flex-direction: column; 
   justify-content: center; 
   align-items: center;
@@ -883,9 +843,10 @@ body {
   align-items: center;
 }
 
-.contactEdit, .contactDelete, .contactGoBack {
-    width: 50%;
-    padding: 8px 15px;
+.contactEdit, .contactDelete, .contactGoBack, .contactUpdate {
+    width: 20rem;
+    padding: 6px 10px;
+    height: 2.5rem;
     margin-right: 1rem;
     font-weight: bold;
     color: #fff;
@@ -899,6 +860,16 @@ body {
 
 .contactEdit {
   background-color: rgb(110, 61, 235);
+}
+
+.contactUpdate {
+  background-color: rgb(110, 61, 235);
+  width: 0rem;
+  opacity: 0;
+}
+
+.contactDelete {
+  margin-left: -2rem;
 }
 
 .contactGoBack {
@@ -940,3 +911,76 @@ body {
   margin-bottom: -4.5vh;
   height: 1.5vh;
 }
+
+.contactHeader {
+  margin-top: -8rem; 
+  margin-bottom: 4rem;
+  font-family: "Quicksand", sans-serif;
+}
+
+.contactTitle {
+  font-family: "Quicksand", sans-serif;
+  margin-right: 1rem; 
+  margin-left: -3rem;
+  /* padding-bottom: 1rem; */
+  font-size: x-large;
+}
+
+.contactRow1 {
+  display: flex; 
+  flex-direction: row; 
+  margin-right: 6.1rem; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.contactRow2 {
+  display: flex; 
+  flex-direction: row; 
+  margin-right: 2rem; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.contactSearchResult {
+  color: rgb(199, 5, 5);
+  font-weight: lighter;
+  font-size: 17px;
+  font-family: "Quicksand", sans-serif;
+  margin-top: .5rem;
+  margin-bottom: -2rem;
+}
+
+.contactUpdateResult, .contactDeleted {
+  color: rgb(6, 160, 14);
+  font-weight: lighter;
+  font-size: 17px;
+  font-family: "Quicksand", sans-serif;
+  margin-top: -3rem;
+}
+
+/* .contactDeleted {
+  color: rgb(6, 160, 14);
+  font-weight: lighter;
+  font-size: 17px;
+  font-family: "Quicksand", sans-serif;
+} */
+
+.confirmDeletion {
+  display: none;
+  width: 20rem;
+  padding: 6px 10px;
+  height: 2.5rem;
+  margin-right: 1rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  background-color: #eb3c36;
+  border: none;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+}
+

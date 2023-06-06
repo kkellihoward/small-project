@@ -9,7 +9,7 @@ function displayContact(people, index)
 
 
     document.getElementById("addSearchDisplay").style.display = 'none';
-    document.getElementById("contactContainer").style.display = 'contents';
+    document.getElementById("contactContainer").style.display = 'flex';
 
     document.getElementById("contactFirst").value = currentContact.firstName;
     document.getElementById("contactFirst").readOnly = true;
@@ -30,6 +30,18 @@ function edit()
     document.getElementById("contactLast").readOnly = false;
     document.getElementById("contactEmail").readOnly = false;
     document.getElementById("contactPhone").readOnly = false;
+    
+    document.getElementById("contactUpdate").style.width = "20rem";
+    document.getElementById("contactUpdate").style.marginRight = "3.25rem";
+    document.getElementById("contactUpdate").style.marginLeft = "-2.25rem";
+    document.getElementById("contactUpdate").style.opacity = "100%";
+    document.getElementById("contactEdit").style.width = "0rem";
+    document.getElementById("contactEdit").style.opacity = "0%";
+}
+
+function startDelete()
+{
+    document.getElementById("confirmDeletion").style.display = "flex";
 }
 
 function deleteContact()
@@ -48,6 +60,7 @@ function deleteContact()
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
     try
     {
         xhr.onreadystatechange = function() 
@@ -55,6 +68,7 @@ function deleteContact()
             if (this.readyState == 4 && this.status == 200) 
             {
                 document.getElementById("contactDeleted").innerHTML = "Contact has been deleted!";
+                document.getElementById("confirmDeletion").style.display = "none";
             }
         };
         xhr.send(jsonPayload);
@@ -64,10 +78,28 @@ function deleteContact()
         document.getElementById("contactUpdateResult").innerHTML = err.message;
     }
 
+    setTimeout(delay, 2000);
+                
+    function delay () {
+        document.getElementById("contactDeleted").innerHTML = "";
+        let searchBody = document.getElementById("searchBody");
+        searchBody.innerHTML = "";
+        document.getElementById("contactContainer").style.display = 'none';
+        document.getElementById("addSearchDisplay").style.display = 'contents';
+    }
+
 }
 
 function update()
 {
+    document.getElementById("contactUpdate").style.width = "0rem";
+    document.getElementById("contactUpdate").style.marginRight = "0rem";
+    document.getElementById("contactUpdate").style.marginLeft = "0rem";
+    document.getElementById("contactUpdate").style.opacity = "0%";
+    document.getElementById("contactEdit").style.width = "20rem";
+    document.getElementById("contactEdit").style.opacity = "100%";
+    document.getElementById("contactEdit").style.marginRight = "2rem";
+
     var localFirst = document.getElementById("contactFirst").value;
     var localLast = document.getElementById("contactLast").value;
     var localEmail = document.getElementById("contactEmail").value;
@@ -100,6 +132,16 @@ function update()
     catch(err)
     {
         document.getElementById("contactUpdateResult").innerHTML = err.message;
+    }
+
+    setTimeout(delay, 2000);
+                
+    function delay () {
+        document.getElementById("contactUpdateResult").innerHTML = "";
+        let searchBody = document.getElementById("searchBody");
+        searchBody.innerHTML = "";
+        document.getElementById("contactContainer").style.display = 'none';
+        document.getElementById("addSearchDisplay").style.display = 'contents';
     }
 }
 
@@ -134,20 +176,28 @@ function searchContact()
 			if (this.readyState == 4 && this.status == 200) 
 			{
                 let searchBody = document.getElementById("searchBody");
-                console.log("xhr.responseText = "+ xhr.responseText)
+                
 				let jsonObject = JSON.parse( xhr.responseText );
 				let i = 0;
-                console.log(jsonObject);
+                
                 let allContacts = jsonObject.results;
                 let table = document.getElementById("searchBody");
                 searchBody.innerHTML = "";
+                console.log(jsonObject)
+                let response1 = JSON.parse(xhr.responseText)
+                
+                if(response1.error.length > 0)
+                {
+                    document.getElementById("contactSearchResult").innerHTML = "*No Contact Found ";
+                    return;
+                }
                 for(let i = 0; i < jsonObject.results.length; i++)
                 {
 					currentContact = jsonObject.results[i];
 					let row = searchBody.insertRow(i);
                     let name = row.insertCell(0);
                     name.innerHTML = currentContact.firstName + " " + currentContact.lastName;
-                    console.log(name.innerHTML)
+ 
                     name.addEventListener("click", () => displayContact(
                         allContacts[i], i))
 				}
@@ -157,7 +207,7 @@ function searchContact()
 	}
 	catch(err)
 	{
-        document.getElementById("colorSearchResult").innerHTML = err.message;
+        document.getElementById("contactSearchResult").innerHTML = err.message;
 	}
 }
 

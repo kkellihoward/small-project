@@ -48,13 +48,8 @@ function addUser()
                 catch{}
                 //if there is no error, the account was created and returned user to manager page
                 document.getElementById("accountCreated").innerHTML = "Account was created sucessfully! Returning to login page!";
-                setTimeout(delay, 2000);
+                setTimeout(delay2, 2000);
                 //}
-            
-                //delay to manager page
-                function delay () {
-                    window.location.href = "manager.html";
-                }
                 
                 //delay to index
                 function delay2 () {

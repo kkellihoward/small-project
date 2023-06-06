@@ -123,9 +123,9 @@
                 autofocus
                 placeholder="Phone"
               />
-              <p id="contactUpdateResult"></p>
-              <p id="contactSearchResult"></p>
-              <p id="contactDeleted"></p>
+              <div>
+                <p class="contactSearchResult" id="contactSearchResult"></p>
+              </div>
               <button type="button" class="searchButton" onclick="searchContact()">Search <i class='bi bi-search' id="searchIcon"></i></button>
             </form>
           </div>
@@ -148,29 +148,35 @@
       </div>
 
       <div class="contactContainer" id="contactContainer">
-        <div style="display: flex; flex-direction: row; margin-right: 6.1rem;">
-          <p style="margin-right: 1rem; margin-left: -1rem;">First Name: </p>
+        <h1 class="contactHeader">Contact</h1>
+        <div>
+          <p class="contactUpdateResult" id="contactUpdateResult"></p>
+          <p class="contactDeleted" id="contactDeleted"></p>
+        </div>
+        <div class="contactRow1" style="margin-top: -2rem;">
+          <p class="contactTitle">First Name: </p>
           <input class="searchInput" id="contactFirst" />
         </div>
-        <div style="display: flex; flex-direction: row; margin-right: 6.1rem;">
-          <p style="margin-right: 1rem; margin-left: -1rem;">Last Name: </p>
+        <div class="contactRow1">
+          <p class="contactTitle">Last Name: </p>
           <input class="searchInput" id="contactLast" />
         </div>
-        <div style="display: flex; flex-direction: row; margin-right: 4rem;">
-          <p style="margin-right: 1rem; margin-left: -1rem;">Phone: </p>
-          <input class="searchInput" id="contactPhone" />
+        <div class="contactRow2">
+          <p class="contactTitle">Phone: </p>
+          <input class="searchInput" style="margin-right: 0.8rem;" id="contactPhone" />
         </div>
-        <div style="display: flex; flex-direction: row; margin-right: 4rem;">
-          <p style="margin-right: 1rem; margin-left: -1rem;">Email: </p>
+        <div class="contactRow2">
+          <p class="contactTitle">Email: </p>
           <input class="searchInput" id="contactEmail" />
           <p id="contactId"></p>
         </div>
-        <div style="display: flex; flex-direction: row;">
-          <button class="contactEdit" onclick="edit()">Edit Contact</button>
-          <button class="contactEdit" onclick="update()">Update Contact</button>
-          <button class="contactDelete" onclick="deleteContact()">Delete Contact</button>
-          <button class="contactGoBack" onclick="backToSearch()">Cancel</button>
+        <div style="display: flex; flex-direction: row; margin-top: 2rem; margin-bottom: 1rem; width: 100%;">
+          <button class="contactEdit" id="contactEdit" onclick="edit()">Edit Contact</button>
+          <button class="contactUpdate" id="contactUpdate" onclick="update()">Update Contact</button>
+          <button class="contactDelete" onclick="startDelete()">Delete Contact</button>
         </div>
+        <button class="confirmDeletion" id="confirmDeletion" onclick="deleteContact()">CLICK TO CONFIRM DELETION</button>
+        <button class="contactGoBack" onclick="backToSearch()">Cancel</button>
       </div>
     </div>
     <script type="text/javascript" src="js/addSearchSwitch.js"></script>  
